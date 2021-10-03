@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/CSS/style.css">
+    <link rel="stylesheet" href="public/CSS/reset.css">
+    <title>Калькулятор на JQ</title>
+</head>
+    <body>
+        <%- include ('blocks/menu/index.ejs') %>
+        <div class="wrapper">
+            <h2 class="title">Расчёт скорости потока воздуха в трубе:</h2><br>
+            <!-- block 1 -->
+            <div class="wrapper_air">
+                <p class="air__text">Введите расход воздуха  (m³/ч):</p><br>
+                <input name="input" class="air_airtext" type="text" placeholder="Введите значение">
+            </div>
+            <div class="slider"></div><br> 
+            <!-- block 2 -->
+            <div id="group">
+                <div class="wrapper__group">
+                    <div class="wrapper__group--text">
+                        Прямоугольное сечение (mm): <br><br>
+                        Круглое сечение (mm): 
+                    </div>
+                    <div class="wrapper__group--checkbox">
+                        <input type="checkbox" class="click_square"><br>
+                        <input type="checkbox" class="click_circle">
+                    </div>
+                </div>
+            </div>
+            <p class="text_square">A = </p><input id="square1" name="input" class="square" type="text" placeholder="Введите значение"><br>
+            <p class="text_square">B = </p><input id="square2" name="input" class="square" type="text" placeholder="Введите значение">
+            <p class="text_circle">Dy = </p><input name="input" class="circle" type="text" placeholder="Введите значение">
+            <br>
+            <span class="answer__text">Ответ:</span>
+            <br><br>
+            <!-- block 3 -->
+                <p class="btn_hello_text">Справочная информация!</p>
+                <p class="hello_text">
+                    Расчёт скорости потока воздуха в трубе определяется по формуле: V= L/F*3600.<br>
+                    V – Скорость потока воздуха в трубе (м/с).<br>
+                    L – Объемный расход воздуха для вентиляции помещения (м³/ч).<br>
+                    F – Площадь сечения воздуховода естественной вентиляции (м²). <br>
+                    А и В – Cтороны прямоугольного сечения.<br>
+                    Dy – Диаметр круглого сечения.<br>
+                    <br>
+                    Смотри РД5.5584-89.
+                </p>
+        </div>
+        <!-- scripts -->
+        <script src="JS/jquery-3.5.1min.js"></script>
+        <script type="text/javascript" src="JS/jquery-ui.js"></script>
+        <script src="JS/script.jquery.js"></script>
+        <link type="text/css" href="public/CSS/jquery-ui.css" rel="stylesheet">
+    </body>
+</html>
